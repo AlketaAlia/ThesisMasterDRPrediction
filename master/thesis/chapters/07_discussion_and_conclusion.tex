@@ -1,0 +1,56 @@
+\chapter{Discussion and conclusion}
+\label{ch:discussion}
+
+% ~8-12 pages
+
+\section{Summary of findings}
+% Brief recap of what each phase contributed:
+% - Phase 1: rigorous binary baselines, calibration, statistical testing.
+% - Phase 2: conformal prediction with formal coverage, MC Dropout,
+%   K-fold CV.
+% - Phase 3: clinical 5-stage grading at QWK 0.847, conformal set sizes
+%   that map to a refer-to-specialist rule.
+
+\section{Clinical implications}
+% - The system is suited to a triage role, not a diagnosis role: it can
+%   confidently auto-resolve ~70\% of cases and refer the remaining 30\%.
+% - For deployment, the conformal threshold should be re-fit on
+%   per-clinic data (each new clinic = a new exchangeable distribution).
+% - Calibration must be monitored over time as the population drifts.
+
+\section{Limitations}
+% - Single dataset (APTOS 2019). Cross-dataset generalisation untested
+%   (\cref{sec:future-cross-dataset}).
+% - Synthetic OOD only. Real adversarial / mislabelled / out-of-modality
+%   inputs likely behave differently.
+% - 5-stage grading per-class F1 still weak for minority classes (Severe,
+%   PDR). Larger training sets and class-aware augmentation would help.
+% - Computation: trained on CPU laptop, no GPU. State-of-the-art DR
+%   pipelines use much heavier ensembles, more augmentation, and external
+%   data.
+
+\section{Future work}
+\label{sec:future-cross-dataset}
+% - Cross-dataset evaluation on Messidor-2 / IDRiD / EyePACS — the
+%   scaffolding is in place (\texttt{master/run\_cross\_dataset.py}).
+% - Active learning: use the conformal abstention set to query oracle
+%   labels efficiently.
+% - Multi-task learning: simultaneous severity grading and lesion
+%   segmentation (IDRiD provides pixel-level annotations).
+% - Federated learning across clinics for privacy-preserving training.
+% - Vision transformers (ViT, Swin) with self-supervised retinal
+%   pretraining (e.g.\ DINO + APTOS unlabelled).
+
+\section{Conclusion}
+% The thesis demonstrates that a from-scratch CNN and a transfer-learning
+% ResNet50 on APTOS 2019, combined with conformal prediction, MC Dropout
+% and feature-space OOD detection, form a complete clinical decision
+% support pipeline. While individual model accuracy improvements over
+% the bachelor study are modest (1-2 pp), the addition of statistical
+% guarantees, calibration analysis and 5-stage grading transforms a
+% black-box classifier into a deployable triage system with a principled
+% refer-to-clinician rule.
+
+% Closing sentence — the broader vision:
+% Modern medical AI must do more than maximise accuracy; it must know
+% when to defer.

@@ -1,0 +1,10 @@
+{
+  "arch": "resnet50",
+  "folds": 5,
+  "test_accuracy_mean": 0.9563636363636364,
+  "test_accuracy_std": 0.0018181818181817744,
+  "test_auc_mean": 0.9889986641801902,
+  "test_auc_std": 0.0015411879421141231,
+  "best_val_accuracy_mean": 0.9730125546455384,
+  "best_val_accuracy_std": 0.008121524822701794
+}

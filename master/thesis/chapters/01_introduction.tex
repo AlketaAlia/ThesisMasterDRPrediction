@@ -1,0 +1,60 @@
+\chapter{Introduction}
+\label{ch:introduction}
+
+% ~6-10 pages
+
+\section{Clinical motivation}
+% Outline:
+% - DR prevalence (mention WHO numbers, global blindness statistics)
+% - 5-stage severity scale and its treatment implications:
+%   * No DR / Mild — observation
+%   * Moderate — closer follow-up
+%   * Severe / PDR — urgent referral, possible laser/anti-VEGF
+% - Cost and shortage of trained ophthalmologists, especially in
+%   primary care; need for automated triage.
+
+\section{Why uncertainty matters in medical AI}
+% Outline:
+% - Modern CNNs are over-confident: a wrong 99\%-confident prediction is
+%   indistinguishable from a right one.
+% - Risk of harm: an overconfident "No DR" can delay vision-saving care.
+% - Recent regulatory push (FDA AI-as-a-medical-device, EU AI Act)
+%   explicitly requires transparency around model uncertainty.
+% - Clinically useful systems should produce a "refer to specialist"
+%   recommendation rather than a forced binary verdict on hard cases.
+
+\section{Bachelor recap and research gap}
+% Outline:
+% - Briefly describe the bachelor thesis (binary classification, 9
+%   algorithms, single 80/20 split, accuracy as the only metric).
+% - Identify the gaps the master must close:
+%   * Multi-class severity grading, not just binary
+%   * Statistical significance and confidence intervals
+%   * Calibration, not just accuracy
+%   * Distribution-free uncertainty guarantees
+%   * Out-of-distribution detection
+%   * Reproducibility under cross-validation
+
+\section{Contributions}
+% Outline:
+% 1. A reproducible, statistically rigorous evaluation pipeline for the
+%    APTOS 2019 dataset (stratified splits, K-fold CV, McNemar testing).
+% 2. Calibration analysis (ECE, MCE, temperature scaling) for six DL
+%    architectures, exposing previously unreported over-confidence.
+% 3. Application of split conformal prediction (LAC + APS) to DR
+%    classification with formal $1-\alpha$ coverage guarantees.
+% 4. Comparison of Monte Carlo Dropout, deep-ensemble, and feature-space
+%    OOD detection methods on the same test set.
+% 5. A 5-stage grading model achieving $\text{QWK} = 0.847$, competitive
+%    with the APTOS 2019 Kaggle leaderboard.
+% 6. An open-source Streamlit application that surfaces uncertainty
+%    visually for end users.
+
+\section{Thesis structure}
+% \cref{ch:background} surveys clinical and technical background;
+% \cref{ch:methodology} describes the data, splits and shared experimental
+% protocol; \cref{ch:phase1} reports binary baselines and calibration;
+% \cref{ch:phase2} introduces conformal prediction, OOD detection,
+% MC Dropout and K-fold CV; \cref{ch:phase3} extends the system to
+% multi-class severity grading; \cref{ch:discussion} discusses clinical
+% implications, limitations and future work.

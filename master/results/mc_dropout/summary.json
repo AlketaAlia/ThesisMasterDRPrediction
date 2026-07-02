@@ -1,0 +1,30 @@
+[
+  {
+    "model": "cnn_mcd",
+    "T": 30,
+    "deterministic_accuracy": 0.9072727272727272,
+    "deterministic_auc": 0.9675170945257839,
+    "deterministic_ece": 0.03627070264382795,
+    "mc_accuracy": 0.9109090909090909,
+    "mc_auc": 0.96772870954516,
+    "mc_ece": 0.03866390986876054,
+    "mean_std_correct": 0.0435611866414547,
+    "mean_std_wrong": 0.07206255197525024,
+    "rc_acc_at_90pct_pred_entropy": 0.9434343434343434,
+    "rc_acc_at_50pct_pred_entropy": 0.9890909090909091
+  },
+  {
+    "model": "resnet50_mcd",
+    "T": 30,
+    "deterministic_accuracy": 0.9618181818181818,
+    "deterministic_auc": 0.989088600563425,
+    "deterministic_ece": 0.020407768596302375,
+    "mc_accuracy": 0.9618181818181818,
+    "mc_auc": 0.988242140485921,
+    "mc_ece": 0.02427602377804846,
+    "mean_std_correct": 0.043078478425741196,
+    "mean_std_wrong": 0.1301060914993286,
+    "rc_acc_at_90pct_pred_entropy": 0.9777777777777777,
+    "rc_acc_at_50pct_pred_entropy": 0.9927272727272727
+  }
+]

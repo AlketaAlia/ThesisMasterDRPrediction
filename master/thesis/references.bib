@@ -1,0 +1,219 @@
+% Bibliography for the master thesis on uncertainty-aware DR grading.
+% Add or remove entries to match the chapters' \cite{} commands.
+
+% ============================================================================
+% Diabetic retinopathy datasets and clinical context
+% ============================================================================
+
+@misc{aptos2019kaggle,
+  title  = {APTOS 2019 Blindness Detection},
+  author = {{Asia Pacific Tele-Ophthalmology Society}},
+  year   = {2019},
+  howpublished = {\url{https://www.kaggle.com/c/aptos2019-blindness-detection}},
+  note   = {Kaggle competition dataset, 3,662 fundus images labelled 0--4.},
+}
+
+@dataset{messidor2,
+  title  = {Messidor-2 Diabetic Retinopathy Database},
+  author = {Decenci{\`e}re, Etienne and Zhang, Xiwei and Cazuguel, Guy and Lay, Bruno and Cochener, B{\'e}atrice and Trone, Caroline and Gain, Philippe and Ordonez, Richard and Massin, Pascale and Erginay, Ali and others},
+  year   = {2014},
+  publisher = {ADCIS},
+  doi    = {10.1016/j.ophtha.2013.04.034},
+}
+
+@inproceedings{idrid,
+  title     = {{IDRiD}: Indian Diabetic Retinopathy Image Dataset},
+  author    = {Porwal, Prasanna and Pachade, Samiksha and Kamble, Ravi and Kokare, Manesh and Deshmukh, Girish and Sahasrabuddhe, Vivek and M{\'e}riaudeau, Fabrice},
+  booktitle = {ISBI},
+  year      = {2018},
+}
+
+@article{eyepacs2015,
+  title  = {Diabetic Retinopathy Detection ({Kaggle EyePACS})},
+  author = {{EyePACS}},
+  year   = {2015},
+  howpublished = {\url{https://www.kaggle.com/c/diabetic-retinopathy-detection}},
+}
+
+% ============================================================================
+% Convolutional architectures
+% ============================================================================
+
+@inproceedings{he2016resnet,
+  title     = {Deep Residual Learning for Image Recognition},
+  author    = {He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian},
+  booktitle = {CVPR},
+  year      = {2016},
+}
+
+@inproceedings{huang2017densenet,
+  title     = {Densely Connected Convolutional Networks},
+  author    = {Huang, Gao and Liu, Zhuang and {van der Maaten}, Laurens and Weinberger, Kilian Q.},
+  booktitle = {CVPR},
+  year      = {2017},
+}
+
+@inproceedings{chollet2017xception,
+  title     = {Xception: Deep Learning with Depthwise Separable Convolutions},
+  author    = {Chollet, Fran{\c c}ois},
+  booktitle = {CVPR},
+  year      = {2017},
+}
+
+@inproceedings{simonyan2015vgg,
+  title     = {Very Deep Convolutional Networks for Large-Scale Image Recognition},
+  author    = {Simonyan, Karen and Zisserman, Andrew},
+  booktitle = {ICLR},
+  year      = {2015},
+}
+
+% ============================================================================
+% Calibration of deep classifiers
+% ============================================================================
+
+@inproceedings{guo2017calibration,
+  title     = {On Calibration of Modern Neural Networks},
+  author    = {Guo, Chuan and Pleiss, Geoff and Sun, Yu and Weinberger, Kilian Q.},
+  booktitle = {ICML},
+  year      = {2017},
+}
+
+@inproceedings{naeini2015obtaining,
+  title     = {Obtaining Well Calibrated Probabilities Using {Bayesian} Binning},
+  author    = {Naeini, Mahdi Pakdaman and Cooper, Gregory F. and Hauskrecht, Milos},
+  booktitle = {AAAI},
+  year      = {2015},
+}
+
+% ============================================================================
+% Bayesian DL / ensembles / MC Dropout
+% ============================================================================
+
+@inproceedings{gal2016dropout,
+  title     = {Dropout as a {Bayesian} Approximation: Representing Model Uncertainty in Deep Learning},
+  author    = {Gal, Yarin and Ghahramani, Zoubin},
+  booktitle = {ICML},
+  year      = {2016},
+}
+
+@inproceedings{lakshminarayanan2017simple,
+  title     = {Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles},
+  author    = {Lakshminarayanan, Balaji and Pritzel, Alexander and Blundell, Charles},
+  booktitle = {NeurIPS},
+  year      = {2017},
+}
+
+@inproceedings{depeweg2018decomposition,
+  title     = {Decomposition of Uncertainty in {Bayesian} Deep Learning for Efficient and Risk-sensitive Learning},
+  author    = {Depeweg, Stefan and Hern{\'a}ndez-Lobato, Jos{\'e} Miguel and Doshi-Velez, Finale and Udluft, Steffen},
+  booktitle = {ICML},
+  year      = {2018},
+}
+
+% ============================================================================
+% Conformal prediction
+% ============================================================================
+
+@book{vovk2005algorithmic,
+  title     = {Algorithmic Learning in a Random World},
+  author    = {Vovk, Vladimir and Gammerman, Alexander and Shafer, Glenn},
+  publisher = {Springer},
+  year      = {2005},
+}
+
+@article{angelopoulos2021gentle,
+  title   = {A Gentle Introduction to Conformal Prediction and Distribution-free Uncertainty Quantification},
+  author  = {Angelopoulos, Anastasios N. and Bates, Stephen},
+  journal = {arXiv preprint arXiv:2107.07511},
+  year    = {2021},
+}
+
+@inproceedings{romano2020classification,
+  title     = {Classification with Valid and Adaptive Coverage},
+  author    = {Romano, Yaniv and Sesia, Matteo and Cand{\`e}s, Emmanuel J.},
+  booktitle = {NeurIPS},
+  year      = {2020},
+}
+
+% ============================================================================
+% OOD detection
+% ============================================================================
+
+@inproceedings{hendrycks2017baseline,
+  title     = {A Baseline for Detecting Misclassified and Out-of-Distribution Examples in Neural Networks},
+  author    = {Hendrycks, Dan and Gimpel, Kevin},
+  booktitle = {ICLR},
+  year      = {2017},
+}
+
+@inproceedings{liu2020energy,
+  title     = {Energy-based Out-of-distribution Detection},
+  author    = {Liu, Weitang and Wang, Xiaoyun and Owens, John D. and Li, Yixuan},
+  booktitle = {NeurIPS},
+  year      = {2020},
+}
+
+@inproceedings{lee2018simple,
+  title     = {A Simple Unified Framework for Detecting Out-of-Distribution Samples and Adversarial Attacks},
+  author    = {Lee, Kimin and Lee, Kibok and Lee, Honglak and Shin, Jinwoo},
+  booktitle = {NeurIPS},
+  year      = {2018},
+}
+
+% ============================================================================
+% DR-specific deep learning + uncertainty
+% ============================================================================
+
+@article{leibig2017leveraging,
+  title   = {Leveraging Uncertainty Information from Deep Neural Networks for Disease Detection},
+  author  = {Leibig, Christian and Allken, Vaneeda and Ayhan, Murat Seckin and Berens, Philipp and Wahl, Siegfried},
+  journal = {Scientific Reports},
+  year    = {2017},
+  volume  = {7},
+}
+
+@article{laves2020wellcalibrated,
+  title   = {Well-Calibrated Regression Uncertainty in Medical Imaging with Deep Learning},
+  author  = {Laves, Max-Heinrich and Ihler, Sontje and Fast, Jacob F. and Kahrs, L{\"u}der A. and Ortmaier, Tobias},
+  journal = {Medical Image Analysis},
+  year    = {2020},
+}
+
+@article{gulshan2016development,
+  title   = {Development and Validation of a Deep Learning Algorithm for Detection of Diabetic Retinopathy in Retinal Fundus Photographs},
+  author  = {Gulshan, Varun and Peng, Lily and Coram, Marc and Stumpe, Martin C and Wu, Derek and Narayanaswamy, Arunachalam and Venugopalan, Subhashini and Widner, Kasumi and Madams, Tom and Cuadros, Jorge and others},
+  journal = {JAMA},
+  year    = {2016},
+  volume  = {316},
+  number  = {22},
+}
+
+% ============================================================================
+% Selective prediction
+% ============================================================================
+
+@inproceedings{elyaniv2010foundations,
+  title     = {On the Foundations of Noise-free Selective Classification},
+  author    = {{El-Yaniv}, Ran and Wiener, Yair},
+  booktitle = {Journal of Machine Learning Research},
+  year      = {2010},
+}
+
+@inproceedings{geifman2017selective,
+  title     = {Selective Classification for Deep Neural Networks},
+  author    = {Geifman, Yonatan and El-Yaniv, Ran},
+  booktitle = {NeurIPS},
+  year      = {2017},
+}
+
+% ============================================================================
+% Bachelor reference
+% ============================================================================
+
+@phdthesis{alia2024bachelor,
+  title  = {Diagnosis of Diabetic Retinopathy Using Machine and Deep Learning Algorithms},
+  author = {Alia, Alketa},
+  year   = {2024},
+  school = {Epoka University},
+  type   = {Bachelor's thesis},
+}

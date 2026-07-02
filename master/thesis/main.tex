@@ -1,0 +1,76 @@
+% Master thesis — Uncertainty-Aware Diabetic Retinopathy Grading
+% Compile: pdflatex main && bibtex main && pdflatex main && pdflatex main
+%
+% This is a skeleton. Fill the chapter \input{} stubs with prose; tables
+% and figures are auto-generated and live under thesis/{tables,figures}.
+
+\documentclass[12pt,a4paper,oneside]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% Math + tables + figures
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{array}
+
+% Bibliography
+\usepackage[backend=biber,style=ieee,sorting=nyt]{biblatex}
+\addbibresource{references.bib}
+
+% Code listings
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\color{blue!70!black},
+  commentstyle=\color{green!50!black}\itshape,
+  stringstyle=\color{red!60!black},
+  frame=single,
+  rulecolor=\color{gray!40},
+  breaklines=true,
+  showstringspaces=false,
+}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage[capitalize]{cleveref}
+
+\title{Uncertainty-Aware Diabetic Retinopathy Grading via Conformal Prediction
+       and Bayesian Deep Learning}
+\author{Alketa Alia}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\input{chapters/abstract}
+\end{abstract}
+
+\tableofcontents
+\listoftables
+\listoffigures
+
+\input{chapters/01_introduction}
+\input{chapters/02_background}
+\input{chapters/03_methodology}
+\input{chapters/04_phase1_baselines_and_calibration}
+\input{chapters/05_phase2_conformal_ood_mcd}
+\input{chapters/06_phase3_multiclass_grading}
+\input{chapters/07_discussion_and_conclusion}
+
+\printbibliography
+
+\appendix
+\input{chapters/A_implementation_details}
+\input{chapters/B_additional_results}
+
+\end{document}

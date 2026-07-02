@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# Trained models and large binaries (too large for GitHub)
+*.keras
+*.h5
+*.npy
+*.pcl
+*.pkl
+
+# Raw dataset images (download from Kaggle APTOS 2019)
+inputs/images/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Temp
+scratchpad/
+*.tmp

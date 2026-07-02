@@ -1,0 +1,38 @@
+\chapter{Implementation details}
+\label{ch:implementation}
+
+% Appendix — code listings, hyperparameters, environment.
+
+\section{Software environment}
+% \begin{itemize}
+%   \item Python 3.9.6, TensorFlow 2.15.0, Keras 2.15, scikit-learn 1.4.2.
+%   \item macOS on Apple Silicon, CPU-only training.
+%   \item Full pinned requirements in \texttt{requirements.txt}.
+% \end{itemize}
+
+\section{Repository layout}
+% Brief description of:
+% - app.py + lib/                — Streamlit UI shell
+% - scripts/                     — training entry points
+% - master/uncertainty/          — calibration / ensemble / conformal /
+%                                  OOD / MC Dropout modules
+% - master/run\_*.py             — analysis drivers
+% - master/results/              — saved CSVs, JSONs, plots
+% - master/thesis/               — this document plus generated tables
+%                                  and figures
+
+\section{Hyperparameters}
+% Table summarising:
+% - Optimizer: Adam, lr=1e-3 (transfer) or default (from-scratch).
+% - Batch size 32; class weights "balanced".
+% - EarlyStopping patience 10 on val\_loss.
+% - ReduceLROnPlateau factor 0.5, patience 5, min\_lr 1e-6.
+% - Dropout rate 0.3 for MC Dropout variants.
+% - Conformal $\alpha \in \{0.05, 0.10\}$; non-conformity LAC + APS.
+
+\section{Reproducibility}
+% - Seeds: stratified split random\_state=123; bootstrap CI seed=42.
+% - All trained models saved as .keras files under results/.
+% - Analysis CSVs saved under master/results/.
+% - Re-running any \texttt{master/run\_*.py} should reproduce the
+%   reported numbers within MC Dropout / data-generator stochasticity.

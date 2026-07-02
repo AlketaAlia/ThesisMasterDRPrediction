@@ -1,0 +1,34 @@
+% Abstract — ~250 words.
+Diabetic retinopathy (DR) is a leading cause of preventable blindness, and
+automated screening systems are expected to scale early detection. While
+recent deep-learning models for DR classification report high accuracies,
+clinical deployment is hindered by their tendency to produce
+\emph{over-confident} predictions: when a model is wrong, it is often
+just as confident as when it is right.
+
+This thesis builds an \emph{uncertainty-aware} DR grading system on top of
+the APTOS~2019 fundus dataset. Six baseline architectures (ResNet50,
+DenseNet121, VGG16, Xception, a custom CNN, and a CNN with mixed
+\textit{tanh}+\textit{ReLU} activations) are first evaluated as binary
+classifiers using a stratified 70/15/15 split. With proper preprocessing
+and class weighting, all five strong baselines reach 95--96\,\%
+test accuracy, which McNemar tests show is statistically indistinguishable
+across them. A heterogeneous ensemble pushes accuracy to 96.55\,\% and
+predictive entropy enables \emph{selective prediction} that reaches
+99.6\,\% accuracy at 50\,\% coverage.
+
+We then add three uncertainty-aware components: (i) split conformal
+prediction with formal coverage guarantees at $\alpha = 0.10$ and
+$\alpha = 0.05$; (ii) Monte Carlo Dropout retrained variants of the CNN
+and ResNet50; and (iii) multi-method out-of-distribution detection in
+which feature-space methods (Mahalanobis, cosine) achieve perfect
+separation against synthetic OOD inputs. Five-fold cross-validation
+on ResNet50 gives a tight test accuracy of $95.64 \pm 0.18$\,\%, ruling out
+single-split luck.
+
+Finally, we re-formulate the task as the clinically meaningful 5-stage
+grading scale (No DR, Mild, Moderate, Severe, PDR). The ResNet50
+multi-class model achieves a quadratic-weighted kappa of 0.847,
+competitive with public APTOS~2019 leaderboards. Combined with conformal
+prediction at 90\,\% coverage, the system produces interpretable
+prediction sets and a principled clinical refer-to-specialist rule.

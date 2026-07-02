@@ -1,0 +1,73 @@
+\chapter{Phase 1: Binary baselines, calibration and ensembling}
+\label{ch:phase1}
+
+% ~12-15 pages
+
+\section{Per-model accuracy with confidence intervals}
+% Reference table:
+% \input{tables/tab_phase1_summary}
+%
+% Discuss:
+% - All 5 strong models cluster in 95-96\% — visualised in
+%   \cref{fig:phase1-acc-ci}.
+% - Boostrap 95\% CIs overlap heavily for the top 5; the CNN
+%   (Tanh+ReLU) variant is clearly worse.
+% - The custom CNN slightly leads (96\%), surprising given its smaller
+%   parameter count. Likely due to grayscale preprocessing matching the
+%   training distribution.
+%
+% \begin{figure}[t]
+%   \centering
+%   \includegraphics[width=0.85\linewidth]{figures/fig_phase1_accuracy_ci.pdf}
+%   \caption{Per-model test accuracy with bootstrap 95\% CI.}
+%   \label{fig:phase1-acc-ci}
+% \end{figure}
+
+\input{tables/tab_phase1_summary}
+
+\section{Statistical significance: McNemar tests}
+\input{tables/tab_phase1_mcnemar}
+% Discuss:
+% - Top-5 models statistically indistinguishable (all p > 0.5).
+% - CNN(Tanh+ReLU) significantly worse than every other deep model
+%   (p < 0.05), confirming that the architecture choice matters when
+%   tanh interrupts ReLU's gradient flow.
+% - Ensemble vs CNN: p = 0.50 — borderline.
+% - Cross-validation in Phase 2 resolves the ensemble's significance.
+
+\section{Calibration analysis}
+% - Reliability diagrams pre/post temperature scaling, one figure per model.
+% - VGG16 benefits most from TS (T=1.44), ECE drops 40\%.
+% - CNN already calibrated (T~1.0). Models with more parameters tend to be
+%   more over-confident — consistent with Guo et al.
+
+\section{Ensemble construction}
+% - Mean-of-probabilities ensemble across 6 models.
+% - Test accuracy 96.55\%, beating every individual member.
+% - Ensemble decomposition: predictive entropy (total uncertainty),
+%   variance of probabilities (epistemic spread), mutual information (BALD).
+
+\section{Selective prediction with the ensemble}
+% \begin{figure}[t]
+%   \centering
+%   \includegraphics[width=0.75\linewidth]{figures/fig_phase1_risk_coverage.pdf}
+%   \caption{Selective accuracy at varying coverage. At 90\% coverage,
+%   accuracy reaches 98.18\%; at 50\%, 99.64\%.}
+%   \label{fig:phase1-rc}
+% \end{figure}
+%
+% - Best uncertainty signals are predictive entropy and 1 - max(p);
+%   mutual information underperforms.
+% - At 90\% coverage, the system improves from 96.55 to 98.18\%, freeing the
+%   clinician to focus on the hardest 10\%.
+
+\section{Lessons from Phase 1}
+% - Test set augmentation in the bachelor pipeline inflated accuracy by
+%   ~1-2 pp; fixing it cost some "headline numbers" but is correct.
+% - 5 of 6 models statistically indistinguishable — the bachelor framing
+%   ("model X is better than Y by 0.X pp") is not supported by the data.
+% - Calibration is reasonable already, no severe over-confidence.
+% - The remaining gap to clinical-grade reliability lies in (a) what to
+%   do when the model is wrong but confident, and (b) extending the
+%   analysis from binary to the actual 5-stage clinical task. These are
+%   addressed in Phase 2 and Phase 3 respectively.

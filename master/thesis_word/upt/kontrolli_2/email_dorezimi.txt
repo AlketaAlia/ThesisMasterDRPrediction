@@ -1,0 +1,103 @@
+================================================================
+TEKSTI I EMAIL-IT PËR DORËZIMIN E KONTROLLIT TË DYTË
+================================================================
+
+PËR:     [email i udhëheqësit shkencor]
+KOPJE:   [email i sekretarisë së departamentit, nëse kërkohet]
+SUBJEKTI: Dorëzimi i Kontrollit të Dytë të Diplomës — Alketa Alia
+
+----------------------------------------------------------------
+
+I/E nderuar Prof. Dr. [Mbiemri],
+
+Sipas afatit të caktuar nga departamenti, po Ju dërgoj në bashkëngjitje raportin
+e Kontrollit të Dytë të tezës sime të diplomës me titull:
+
+"Klasifikim i Vetëdijshëm ndaj Pasigurisë i Retinopatisë Diabetike duke
+Përdorur Parashikim Konformal dhe Mësim të Thellë Bayesian"
+
+Statusi aktual i punimit është përafërsisht 50% i përfunduar.
+
+
+STATUSI I PËRGJITHSHËM
+======================
+
+PJESA E PËRFUNDUAR (~50%):
+  - Kreu I (Hyrja) — drafti i parë i përfunduar
+  - Kreu II (Sfondi teorik) — drafti i parë, në rishikim
+  - Kreu III (Metodologjia) — draft pune i stabilizuar
+  - Faza eksperimentale 1: trajnimi i 6 modeleve binare, me rezultate
+    konkurruese (ensemble: 96.55% saktësi në test set)
+  - Pipeline-i i unifikuar i kodit (scripts/train.py)
+  - Prototip i aplikacionit Streamlit
+
+PJESA NË PROGRES:
+  - Faza 2: implementimi i parashikimit konformal, MC Dropout, OOD detection
+  - Analiza e plotë e kalibrimit me temperature scaling
+  - K-Fold cross-validation për ResNet50
+
+PJESA QË MBETET:
+  - Faza 3: trajnimi multi-class (grading 5-fazor) me QWK si metrikë kryesore
+  - Kreu IV (rezultatet e plota) dhe Kreu V (përfundimet)
+  - Zgjerimi i bibliografisë në 40+ referenca (Vancouver style)
+  - Finalizimi i aplikacionit Streamlit me të gjitha veçoritë e UQ
+  - Formatimi sipas standardit UPT
+
+
+PUNA E PARASHIKUAR DERI NË DORËZIMIN PËRFUNDIMTAR
+==================================================
+
+Sipas planit kohor të detajuar në raport (Seksioni 5):
+
+  Maj 2026     — Finalizimi i Fazës 2 (conformal, MCD, OOD, K-Fold)
+  Qershor 2026 — Faza 3 (multi-class grading) + shkrimi i Kreut IV
+  Korrik 2026  — Shkrimi i Kreut V + sinteza + finalizim Streamlit
+  Gusht 2026   — Zgjerim bibliografie, rishikim Kreu II, formatim UPT
+  Shtator 2026 — Rishikim i plotë me Ju + korrigjime + mbrojtja
+
+
+BASHKËNGJITJET
+==============
+
+  1. RaportProgresi_KontrolliDyte.docx — raporti i plotë i progresit
+  2. [opsionale] Draft i Kreut I, II, III (nëse e kërkoni)
+  3. [opsionale] Rezultatet preliminare të Fazës 1 (CSV)
+
+
+KËRKESË PËR TAKIM
+=================
+
+Do të isha mirënjohëse për një takim të shkurtër (rreth 30 minuta) gjatë
+2-3 javëve të ardhshme për të diskutuar:
+
+  - Rezultatet preliminare të Fazës 1
+  - Drejtimin e Fazës 3 (multi-class grading)
+  - Çdo sugjerim që mund të keni për përmirësim të draft-it
+
+Ju lutem më njoftoni një periudhë që Ju leverdis, dhe unë do të
+përshtatem sipas kalendarit Tuaj.
+
+
+Faleminderit shumë për kohën, durimin, dhe drejtimin Tuaj në këtë proces.
+
+Me respekt dhe konsideratë,
+
+Alketa Alia
+Kandidate për Master në Inxhinieri Informatike
+Fakulteti i Teknologjisë së Informacionit
+Universiteti Politeknik i Tiranës
+Email: aivalanche.2023@gmail.com
+[Numri i kontaktit, opsional]
+
+================================================================
+KËSHILLA PARA DËRGIMIT TË EMAIL-IT
+================================================================
+
+1. Zëvendëso [Mbiemri] me mbiemrin e vërtetë të udhëheqësit
+2. Verifiko email-in e udhëheqësit (zakonisht ne formën emer.mbiemer@fti.edu.al)
+3. Kontrollo nëse departamenti kërkon CC në sekretari
+4. Plotëso datën në dokumentin e raportit para se ta bashkëngjisësh
+5. Konsidero të bashkëngjisësh edhe draft-in e Kreut I-III nëse i ke gati
+   (kjo tregon transparencë dhe seriozitet)
+6. Dërgo email-in të paktën 1 ditë para afatit zyrtar
+7. Mbaj në kopje veten (BCC) për referencë të mëvonshme

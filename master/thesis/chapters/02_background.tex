@@ -1,0 +1,62 @@
+\chapter{Background}
+\label{ch:background}
+
+% ~10-15 pages
+
+\section{Diabetic retinopathy and the APTOS 2019 grading scale}
+% - Pathophysiology overview (microaneurysms, hemorrhages, neovascularisation).
+% - International Clinical DR Severity Scale: No DR (0), Mild (1),
+%   Moderate (2), Severe (3), PDR (4).
+% - APTOS 2019 dataset description: 3,662 fundus images, 224x224, labelled by
+%   one or more ophthalmologists per the above scale.
+% - Class imbalance figures (about half are class 0).
+
+\section{Convolutional architectures used}
+% - ResNet50, DenseNet121, Xception, VGG16 — short summaries.
+% - Transfer learning vs from-scratch CNN: parameter counts,
+%   ImageNet pretraining intuition.
+% - Why these architectures were chosen (alignment with bachelor study
+%   and APTOS literature).
+
+\section{Calibration of deep classifiers}
+% - Definition of calibration: $P(\hat y = y \mid \hat p = p) = p$.
+% - Empirical calibration error (ECE), maximum calibration error (MCE),
+%   reliability diagrams (\citealp{guo2017calibration,naeini2015obtaining}).
+% - Temperature scaling as a one-parameter post-hoc fix.
+
+\section{Bayesian deep learning and Monte Carlo Dropout}
+% - Variational interpretation of dropout (\citealp{gal2016dropout}).
+% - Predictive entropy decomposition into aleatoric + epistemic terms
+%   (\citealp{depeweg2018decomposition}).
+% - Practical recipes: $T$-pass MC Dropout, Deep Ensembles
+%   \citep{lakshminarayanan2017simple}.
+
+\section{Conformal prediction}
+% - Vovk's framework, exchangeability assumption, finite-sample coverage
+%   (\citealp{vovk2005algorithmic,angelopoulos2021gentle}).
+% - Split (inductive) conformal: calibration set + threshold + test
+%   prediction sets.
+% - Score functions: Least Ambiguous Classifier (LAC) and Adaptive
+%   Prediction Sets (APS, \citealp{romano2020classification}).
+
+\section{Out-of-distribution detection}
+% - Maximum Softmax Probability baseline \citep{hendrycks2017baseline}.
+% - Energy-based OOD scores \citep{liu2020energy}.
+% - Feature-space methods: Mahalanobis distance \citep{lee2018simple},
+%   cosine similarity to training centroid.
+% - Why feature-space methods often dominate output-space ones for
+%   pathological inputs.
+
+\section{Selective prediction and risk-coverage curves}
+% - El-Yaniv and Wiener's selective classification framework.
+% - Risk-coverage trade-offs: defer decisions on the most uncertain
+%   inputs to a human expert.
+% - Connection to clinical triage and "human-in-the-loop" workflows.
+
+\section{Related work on DR with uncertainty}
+% - Recent works using MC Dropout / ensembles on DR
+%   (\citealp{leibig2017leveraging,laves2020wellcalibrated}).
+% - Conformal prediction in medical imaging (Angelopoulos et al.,
+%   Bates et al. for medical applications).
+% - Limitations: most works binary, no public conformal threshold,
+%   little transfer evaluation.

@@ -1,0 +1,73 @@
+\chapter{Methodology}
+\label{ch:methodology}
+
+% ~12-18 pages
+
+\section{Dataset and splits}
+% - APTOS 2019 — 3,662 224x224 fundus images, 5-class severity labels.
+% - Stratified 70/15/15 split (train/val/test) with random_state=123.
+% - Test set held out fixed across all experiments — comparisons valid.
+% - Pre-existing all_images.pcl cache for reproducibility.
+
+\section{Image preprocessing}
+% - Per-architecture preprocess_input (ResNet50, DenseNet, Xception, VGG16
+%   each have distinct mean-subtraction conventions).
+% - Custom CNN trained on grayscale-replicated 3-channel input — historical
+%   choice from the bachelor pipeline, kept for fair comparison.
+% - Train-time augmentation: rotation, shift, shear, zoom, horizontal flip.
+% - Eval-time NO augmentation — important fix vs the bachelor pipeline,
+%   which inadvertently augmented the test set.
+
+\section{Training protocol}
+% - Adam, lr=1e-3, binary or categorical crossentropy.
+% - Class weights set to "balanced" via sklearn — critical for the
+%   imbalanced 5-class problem.
+% - Callbacks: EarlyStopping (patience=10), ReduceLROnPlateau (factor=0.5,
+%   patience=5, min_lr=1e-6), ModelCheckpoint(save_best_only=True,
+%   monitor=val_accuracy).
+% - Up to 100 epochs; most runs converge in 15-50.
+
+\section{Evaluation metrics}
+% - Binary: accuracy, AUROC, ECE, MCE.
+% - Multi-class: accuracy, weighted F1, per-class precision/recall/F1,
+%   quadratic-weighted kappa (QWK), mean ordinal distance.
+% - Calibration: reliability diagrams + ECE before / after temperature
+%   scaling fit on the validation split.
+% - Statistical inference: McNemar test for paired classifier comparison;
+%   bootstrap percentile CIs for accuracy.
+
+\section{Conformal prediction protocol}
+% - Split conformal with non-conformity scores LAC ($1 - p_y$) and APS
+%   (cumulative softmax with random tie-breaking).
+% - Calibration set = full validation set (550 samples).
+% - Targets: $1 - \alpha \in \{0.90, 0.95\}$.
+% - Evaluation: empirical coverage, mean set size, set-size distribution,
+%   per-class conditional coverage.
+
+\section{Monte Carlo Dropout protocol}
+% - Train two MCD variants: cnn_mcd (SpatialDropout2D=0.3 after each
+%   conv block + Dropout=0.3 before classifier) and resnet50_mcd
+%   (Dropout=0.3 in the head, base frozen).
+% - Inference with $T = 30$ stochastic forward passes (training=True).
+% - Aggregate per-sample mean, std, predictive entropy, mutual info.
+
+\section{K-fold cross-validation protocol}
+% - 5-fold stratified CV on the train+val pool (3,112 samples).
+% - Test set held fixed at 550 samples.
+% - Each fold: same training pipeline as the single-split run.
+% - Aggregate: mean ± std for accuracy, AUC, val accuracy.
+
+\section{Out-of-distribution detection protocol}
+% - In-distribution: APTOS test set.
+% - OOD: synthetic noise (300 random uniform images, preprocessed).
+%   Real cross-dataset OOD (Messidor-2 / IDRiD) left for cross-dataset
+%   evaluation in Chapter 5/6.
+% - Methods compared: MSP, Energy, Mahalanobis, cosine-centroid.
+% - Metrics: AUROC and FPR @ TPR = 95\%.
+
+\section{Implementation}
+% - Python 3.9, TensorFlow 2.15, Keras, scikit-learn 1.4.
+% - Macbook Air M-series, CPU-only training (5-30 min per epoch).
+% - Code organised under lib/ (Streamlit app), scripts/ (training),
+%   master/ (uncertainty modules and analyses).
+% - Open-source on GitHub at TODO.

@@ -1,0 +1,18 @@
+{
+  "MSP": {
+    "auroc_id_vs_ood": 0.5891696969696969,
+    "fpr_at_tpr95": 0.2963636363636364
+  },
+  "Energy": {
+    "auroc_id_vs_ood": 0.7864909090909091,
+    "fpr_at_tpr95": 0.14
+  },
+  "Mahalanobis": {
+    "auroc_id_vs_ood": 1.0,
+    "fpr_at_tpr95": 0.0
+  },
+  "CosineCentroid": {
+    "auroc_id_vs_ood": 1.0,
+    "fpr_at_tpr95": 0.0
+  }
+}

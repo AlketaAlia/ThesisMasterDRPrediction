@@ -1,0 +1,8 @@
+{
+  "n_members": 2,
+  "test_accuracy": 0.7672727272727272,
+  "test_qwk": 0.7847349480052105,
+  "test_ece": 0.08868488605896178,
+  "rc_acc_at_50pct_pred_entropy": 0.96,
+  "rc_acc_at_90pct_pred_entropy": 0.793939393939394
+}
