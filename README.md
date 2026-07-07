@@ -1,6 +1,6 @@
 # Uncertainty-Aware Diabetic Retinopathy Grading
 
-Master thesis project — **Uncertainty-Aware Diabetic Retinopathy Grading Using Conformal Prediction and Bayesian Deep Learning**, Polytechnic University of Tirana, Faculty of Information Technology.
+Master thesis project — **Uncertainty-Aware Diabetic Retinopathy Grading Using Conformal Prediction and Bayesian Deep Learning**, Polytechnic University of Tirana · Université de Technologie de Compiègne, Faculty of Information Technology.
 
 The project builds a diabetic-retinopathy (DR) screening system that not only classifies fundus images but also **quantifies and communicates its own uncertainty** — through calibration, Monte Carlo Dropout, conformal prediction, and out-of-distribution detection — and defers ambiguous cases to a clinician.
 
@@ -100,4 +100,4 @@ Python 3.9 · TensorFlow 2.15 / Keras · scikit-learn · Streamlit · CPU-only (
 
 ## Author
 
-**Alketa Alia** — Master in Computer Engineering, Polytechnic University of Tirana.
+**Alketa Alia** — Master in Artificial Intelligence and Optimization, Polytechnic University of Tirana · Université de Technologie de Compiègne.
